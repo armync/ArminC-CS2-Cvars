@@ -17,7 +17,7 @@ Additionally, there are included the sound resources path, which could be used i
 #### Console commands
 
 ```
-1.40.5.9
+1.40.6.8
 ```
 
 #### Sounds path cvars
