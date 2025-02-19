@@ -444,7 +444,7 @@ cl_clock_recvmargin_window |  | Default: 4<br>Clock sync will use past N seconds
 cl_clockdbg |  | Default: false<br>
 cl_clockdrift_max_ticks | cheat | Default: 3<br>Maximum number of ticks the clock is allowed to drift before the client snaps its clock to the server's.
 cl_clutch_mode | cl, release | Default: false<br>Silence voice and other distracting sounds until the end of round or next death.
-cl_color | cl, a, user | Default: 3<br>Preferred teammate color
+cl_color | cl, a, user | Default: 4<br>Preferred teammate color
 cl_commandtool_exec | cl | Runs a command from the command tool
 cl_connectionretrytime_p2p | release | Default: 20<br>Number of seconds over which to spread retry attempts for P2P.
 cl_cq_min_queue | user | Default: 0<br>Used by the client to inform the server of their desired queue length.  Derived from cl_tickpacket_recvmargin_desired and cl_tickpacket_desired_queuelength
@@ -692,6 +692,9 @@ cl_inventory_saved_filter2 | cl, a, release | Default: all<br>
 cl_inventory_saved_sort2 | cl, a, release | Default: inv_sort_age<br>
 cl_invites_only_friends | cl, a, release | Default: false<br>If turned on, will ignore in-game invites from recent teammates or other non-friends
 cl_invites_only_mainmenu | cl, a, release | Default: false<br>If turned on, will ignore all invites when user is playing a match
+cl_ironsight_filter_alpha | cl | Default: 1<br>Ironsight filter alpha
+cl_ironsight_min_channel_color | cl | Default: 0.3<br>Ironsight min channel color value
+cl_ironsight_usecrosshaircolor | cl, a, per_user | Default: false<br>Should the scope dot match the user's crosshair color
 cl_itemimages_dynamically_generated | cl, a, release | Default: 2<br>2: use render-targets, fallback to cache and disk; 1: no render targets, but use cache and fallback to disk; 0: disk assets only
 cl_jiggle_bone_debug | cheat | Default: false<br>Display physics-based 'jiggle bone' debugging information
 cl_jiggle_bone_debug_pitch_constraints | cheat | Default: false<br>Display physics-based 'jiggle bone' debugging information
@@ -730,6 +733,7 @@ cl_mute_player_after_reporting_abuse | cl | Default: true<br>Mute players report
 cl_names_debug |  | Default: false<br>
 cl_net_buffer_ticks | cl, a, release | Default: 0<br>Number of ticks of delay for server snapshots and user commands.  This value controls the value of cl_interp_ratio, which you should not modify directly.
 cl_net_buffer_ticks_use_interp | cl, release | Default: false<br>If false, we smooth over packet loss by adjusting the clock synchronization to buffer packets.  If true, we process packets immediately and use cl_interp to delay their effects
+cl_net_printsummary | norecord, release | Print a summary report of Source2 engine networking statistics.  (Ticks, netchan messages, etc.)
 cl_net_showeventlisteners | cl | Default: false<br>Show listening addition/removals
 cl_net_showevents | cl | Default: 0<br>Dump game events to console (1=client only, 2=all).
 cl_new_user_phase | cl, a, release | Default: 0<br>0: Not Started, 1: Needs Training, 2: Training Complete, -1: Disabled
@@ -837,6 +841,7 @@ cl_radar_icon_scale_min | cl, a, release | Default: 0.6<br>Sets the minimum icon
 cl_radar_rotate | cl, a, release | Default: true<br>1
 cl_radar_scale | cl, a, release | Default: 0.7<br>Sets the radar scale. Valid values are 0.25 to 1.0.
 cl_radar_scale_alternate | cl, a, release | Default: 1<br>Sets the alternate radar scale. Valid values are 0.25 to 1.0.
+cl_radar_scale_dynamic | cl, a, release | Default: false<br>Toggles between a radar that scales dynamically to encompass all the detected elements on the map.
 cl_radar_square_with_scoreboard | cl, a, release | Default: true<br>If set, the radar will toggle to square when the scoreboard is visible.
 cl_radial_coyote_time | cl | Default: 0.15<br>Selection lenience: How long in seconds the last selected radial segment is used if no segment is selected.
 cl_radial_menu_icon_radius | cl | Default: 200<br>
@@ -4505,7 +4510,7 @@ sv_logfile | a, release | Default: false<br>Log server information in the log fi
 sv_logflush | a, release | Default: false<br>Flush the log file to disk on each write (slow).
 sv_logsdir | a, release | Default: logs<br>Folder in the game directory where server logs will be stored.
 sv_long_frame_ms |  | Default: 15<br>If a server frame takes longer than N ms, complain about it.  (Dedicated server only.)  See also engine_frametime_warnings_enable.
-sv_mapvetopickvote_maps | sv, release | Default: de_anubis,de_inferno,de_mirage,de_vertigo,de_dust2,de_nuke,de_ancient<br>Which maps are used for map veto pick sequence
+sv_mapvetopickvote_maps | sv, release | Default: de_anubis,de_inferno,de_mirage,de_train,de_dust2,de_nuke,de_ancient<br>Which maps are used for map veto pick sequence
 sv_mapvetopickvote_phase_duration | sv, release | Default: \[1:5\]\[2:15\]\[3:20\]\[4:10\]\[5:10\]\[6:5\]<br>How many seconds each phase lasts
 sv_mapvetopickvote_rnd | sv, release | Default: false<br>When enabled will shuffle veto pick maps list order every time
 sv_massreport | sv | Default: false<br>
@@ -4597,6 +4602,7 @@ sv_rcon_maxfailures |  | Default: 10<br>Max number of times a user can fail rcon
 sv_rcon_minfailures |  | Default: 5<br>Number of times a user can fail rcon authentication in sv_rcon_minfailuretime before being banned
 sv_rcon_minfailuretime |  | Default: 30<br>Number of seconds to track failed rcon authentications
 sv_record_item_time_data | sv, release | Default: false<br>Turn on recording of per player item time data into the server log.
+sv_recvbuf_messages |  | Default: 1024<br>Max number of messages that can be queued in a netchan receive buffer for an ordinary connection from a client.
 sv_regeneration_force_on | sv, cheat | Default: false<br>Cheat to test regenerative health systems
 sv_regeneration_wait_time | sv, rep | Default: 1<br>
 sv_region | release | Default: -1<br>The region of the world to report this server in.
@@ -4673,6 +4679,7 @@ sv_staminarecoveryrate | sv, cl, rep, release | Default: 60<br>Rate at which sta
 sv_standable_normal | sv, cl, rep, cheat, release | Default: 0.7<br>
 sv_stats |  | Default: true<br>Collect CPU usage stats
 sv_steamauth_enforce | release | Default: 2<br>By default, player must maintain a reliable connection to Steam servers. When player Steam session drops, enforce it: 2 = instantly kick, 1 = kick at next spawn, 0 = do not kick.
+sv_steamauth_ignore_localhost | release | Default: true<br>Ignore VAC and auth errors for client connected via localhost address or in-engine loopback
 sv_steamgroup | nf, release | Default: <br>The ID of the steam group that this server belongs to. You can find your group's ID on the admin profile page in the steam community.
 sv_steamgroup_exclusive | release | Default: false<br>If set, only members of Steam group will be able to join the server when it's empty, public people will be able to join the server only if it has players.
 sv_step_move_vel_min | sv, cl, rep, cheat | Default: 64<br>Min velocity for step move.
@@ -5108,7 +5115,7 @@ weapon_sound_falloff_multiplier | sv, cl, rep, cheat, release | Default: 1<br>Sc
 weapon_switch | sv | Use a particular weapon	<br>Arguments: &lt;weapon_name&gt;
 webapi_values_init_buffer_size | cl | Default: 65536<br>Initial buffer size for buffers in the WebAPIValues buffer pool
 webapi_values_max_pool_size_mb | cl | Default: 400<br>Maximum size in bytes of the WebAPIValues buffer pool
-workshop_annotation_submit | cl, release | Submit annotation to workshop.
+workshop_annotation_submit | cl, release | Submit annotation to workshop. To update an existing submission add its ID number from the workshop URL as a second argument.
 workshop_item_submit | cl, release | 
 workshop_tournament_item_submit | cl, release | 
 world_dump_loaded_worlds |  | Dump all of the worlds that we know about
