@@ -1,2 +1,154 @@
 -insecure -condebug -conclearlog -console
-log_flags Console -ConsoleOnly; log_flags Developer -ConsoleOnly; log_flags DeveloperConsole -ConsoleOnly; log_flags DeveloperVerbose -ConsoleOnly; cvarlist; cvar_unhide; cvarlist
+
+log_flags Console -ConsoleOnly;
+log_flags Developer -ConsoleOnly;
+log_flags DeveloperConsole -ConsoleOnly;
+log_flags DeveloperVerbose -ConsoleOnly;
+log_flags SoundOperatorSystem -ConsoleOnly;
+log_flags SndOperators -ConsoleOnly;
+log_flags Matchmaking -ConsoleOnly;
+cvarlist;
+cvar_unhide;
+cvarlist
+
+# log_dumpchannels
+ID      Channel Name                        Severity      Color         Flags                               Tags                            
+----------------------------------------------------------------------------------------------------------------------------------------------------
+0       VProf                               default       0x00000000                                                                        
+1       LOADING                             default       0x00000000                                                                        
+2       General                             default       0x00000000                                                                        
+3       Assert                              default       0x00000000                                                                        
+4       Console                             default       0x00000000    [ConsoleOnly]                       [Console]                     
+5       Developer                           default       0x00000000    [ConsoleOnly]                       [Developer]                     
+6       DeveloperConsole                    default       0x00000000    [ConsoleOnly]                       [Console][DeveloperVerbose]     
+7       DeveloperVerbose                    essential     0xC080C0FF    [ConsoleOnly]                       [DeveloperVerbose]              
+8       Symbols                             essential     0x00000000                                                                        
+9       ToolsStallMonitor                   default       0x00000000                                                                        
+10      Stack unwinding                     essential     0x00000000                                                                        
+11      Entity Load Unserialize             default       0x00000000                                                                        
+12      Entity System                       default       0xFE883AFF                                                                        
+13      VScript                             default       0xF5AFEEFF                                                                        
+14      VScriptDbg                          default       0xEE75C0FF                                                                        
+15      Demo                                default       0xFB5580FF                                                                        
+16      InstantReplay                       default       0x8494FFFF                                                                        
+17      RCon                                default       0xFFC09CFF                                                                        
+18      Steam                               default       0xFFFF00FF                                                                        
+19      Shooting                            default       0x00000000                                                                        
+20      Server                              default       0x96C8FFFF                                                                        
+21      SpawnGroup                          default       0x4BF58AFF                                                                        
+22      SignonState                         default       0xFF9632FF                                                                        
+23      Movie                               default       0xFFAEC9FF                                                                        
+24      ServerLog                           default       0x00000000    [DoNotEcho]                                                         
+25      stringtables                        default       0x64FFFFFF                                                                        
+26      HLTV Broadcast                      default       0xFFC2A0FF                                                                        
+27      HLTV Server                         default       0xE2C2E4FF                                                                        
+28      VR                                  default       0x00000000                                                                        
+29      InputService                        default       0x00000000                                                                        
+30      NetworkClientService                off           0xB4FF7FFF                                                                        
+31      NetworkP2PService                   default       0x00000000                                                                        
+32      NetworkServerService                off           0x00C0FFFF                                                                        
+33      NetworkService                      off           0x00000000                                                                        
+34      RenderService                       default       0x00000000                                                                        
+35      ScreenShot                          default       0xD0D0D0FF                                                                        
+36      SplitScreen                         default       0xAA8CF6FF                                                                        
+37      BitBuf Error                        default       0xFF09ABFF                                                                        
+38      DemoFile                            default       0xFB5564FF                                                                        
+39      Client                              default       0xB4FF00FF                                                                        
+40      CommandLine                         default       0xC5BDA9FF                                                                        
+41      EngineServiceManager                default       0xDC8232FF                                                                        
+42      GameEventSystem                     default       0xD6D7F6FF                                                                        
+43      HostStateManager                    default       0xC43AFEFF                                                                        
+44      CL CommandQueue                     default       0x68FFC8FF                                                                        
+45      Filesystem                          default       0xFFC080FF                                                                        
+46      InputSystem                         default       0xF8CBE9FF                                                                        
+47      IME                                 default       0x00000000                                                                        
+48      Localization System                 default       0x54866FFF                                                                        
+49      D3D                                 default       0x00000000                                                                        
+50      RenderSystem                        default       0x00000000                                                                        
+51      ResourceSystem                      default       0x00000000                                                                        
+52      SchemaSystem                        default       0x00000000                                                                        
+53      TypeManager                         default       0x00000000                                                                        
+54      Vfx                                 default       0x00000000                                                                        
+55      MaterialSystem                      default       0x00000000                                                                        
+56      PostProcessing                      default       0x00000000                                                                        
+57      modellib                            default       0x00000000                                                                        
+58      Physics                             default       0x80FF80FF                                                                        
+59      MeshSystem                          default       0x00000000                                                                        
+60      WorldRenderer                       default       0x00000000                                                                        
+61      Pulse                               default       0x00000000                                                                        
+62      SourceTS                            default       0x358EF1FF                                                                        
+63      Networking                          default       0x64FFFFFF                                                                        
+64      Networking Reliable                 default       0x8F8DD9FF                                                                        
+65      NetSteamConn                        detailed      0x00000000                                                                        
+66      SteamNetSockets                     default       0x00000000                                                                        
+67      AnimationGraph                      default       0xE1F20DFF                                                                        
+68      Animation 2                         default       0x00000000                                                                        
+69      BoneSetup                           default       0x00000000                                                                        
+70      AnimationSystem: IK                 default       0x00000000                                                                        
+71      AnimationSystem                     default       0x00000000                                                                        
+72      AnimResource                        default       0x00000000                                                                        
+73      Interpolation                       default       0xFFFFFFFF                                                                        
+74      DualHull                            default       0x80FF80FF                                                                        
+75      SoundSystemLowLevel                 default       0xFD9B3BFF                                                                        
+76      SoundOperatorSystem                 default       0x00000000    [ConsoleOnly]                       [SoundOperatorSystem]           
+77      SoundSystem                         default       0xFD9B3BFF                                                                        
+78      SndOperators                        default       0x00000000    [ConsoleOnly]                       [SND][SndOperators]             
+79      SteamAudio                          default       0xC0C00AFF                                                                        
+80      LIGHTBINNER                         default       0x00000000                                                                        
+81      RenderGraph                         default       0x00000000                                                                        
+82      SceneSystem                         default       0x00000000                                                                        
+83      CharacterDecalSystem                default       0x00000000                                                                        
+84      ToneMapping                         default       0x00000000                                                                        
+85      VolumetricFog                       default       0x00000000                                                                        
+86      ParticlesLib                        default       0x00000000                                                                        
+87      Particles                           default       0x00000000                                                                        
+88      Panorama                            default       0x4BF5C8FF                                                                        
+89      PanoramaVideoPlayer                 off           0x00000000                                                                        
+90      V8System                            default       0x4285F4FF                                                                        
+91      PanoramaContent                     default       0x00000000                                                                        
+92      VNotify                             default       0x00000000                                                                        
+93      PanoramaScript                      default       0xC8FFFFFF                                                                        
+94      Workshop                            default       0x00FFFFFF    [DoNotEcho]                                                         
+95      BodyGameSystem                      default       0x00000000                                                                        
+96      SoundOpGameSystem                   default       0x80FF80FF                                                                        
+97      VScriptScripts                      default       0x4BF58AFF                                                                        
+98      SaveRestore                         default       0x64FF00FF                                                                        
+99      SaveRestoreSyncIO                   default       0xF4AAF1FF                                                                        
+100     Elapsed                             default       0xF4AAF1FF                                                                        
+101     SaveRestoreIO                       default       0xF14ED5FF                                                                        
+102     SaveRestoreIOFiltered               default       0xB69EFAFF                                                                        
+103     ClientMessages                      default       0x49D5E4FF                                                                        
+104     GlobalState                         default       0xC5FFA2FF                                                                        
+105     WebApi                              default       0x00000000                                                                        
+106     Hltv Director                       default       0x00000000                                                                        
+107     SV CommandQueue                     default       0xFF68C8FF                                                                        
+108     Command Queue Events                default       0xFF7DCDFF                                                                        
+109     Command Queue SAMPLES               default       0xFF7DCDFF                                                                        
+110     ScenePrint                          default       0xEFE4B0FF                                                                        
+111     EmitSound                           default       0xC8A7F5FF                                                                        
+112     SndEmitterSystem                    default       0x00000000    [ConsoleOnly]                       [SndEmitterSystem]              
+113     Wearable                            default       0x00FFFFFF                                                                        
+114     SteamUnifiedMessages                essential     0xFF8080FF                                        [Steam]                         
+115     GCClient                            off           0x00000000    [DoNotEcho]                                                         
+116     SOCache                             off           0x00000000    [DoNotEcho]                                                         
+117     NavMesh                             default       0x00000000                                                                        
+118     RESPONSE_RULES                      default       0x65EDC0FF                                                                        
+119     BuildCubemaps                       default       0xFF6400FF                                                                        
+120     Entity Dump                         default       0xF5B7ECFF                                                                        
+121     UserMessages                        default       0xF55478FF                                                                        
+122     SparseShadowTree                    default       0xFF6400FF                                                                        
+123     BuildSparseShadowTree               default       0xFF6400FF                                                                        
+124     Decals                              default       0x80FF80FF                                                                        
+125     Prediction                          default       0xDAF874FF                                                                        
+126     Subtitles and Captions              default       0x00000000                                                                        
+127     ConfigImport                        default       0x00000000                                                                        
+128     CsIconGenerator                     off           0x00000000                                                                        
+129     UI Map Previews                     off           0x00000000                                                                        
+130     CSGO game instructor                off           0x00000000                                                                        
+131     Matchmaking                         off           0x00000000    [ConsoleOnly]                                                       
+132     RenderPipelineCsgo                  default       0x00000000                                                                        
+133     RenderPipelineCsgoPostHud           default       0x00000000                                                                        
+134     Host                                default       0x00B4FFFF                                                                        
+135     RESPONSEDOC_LIB                     default       0x80FFC0FF                                                                        
+136     SceneFileCache                      default       0xD76AB9FF                                                                        
+137     CSGO_MainMenu                       default       0xAAFF80FF                                                                        
