@@ -113,13 +113,9 @@ ammo_9mm_max | sv, cl, rep, release | Default: 120<br>
 ammo_buckshot_headshot_mult | sv, cl, rep | Default: 1<br>You must enable tweaking via tweak_ammo_impulses to use this value.
 ammo_buckshot_impulse | sv, cl, rep | Default: 600<br>You must enable tweaking via tweak_ammo_impulses to use this value.
 ammo_buckshot_max | sv, cl, rep, release | Default: 32<br>
-ammo_grenade_limit_breachcharge | sv, cl, rep, release | Default: 3<br>
-ammo_grenade_limit_bumpmine | sv, cl, rep, release | Default: 3<br>
 ammo_grenade_limit_default | sv, cl, rep, release | Default: 1<br>
 ammo_grenade_limit_flashbang | sv, cl, rep, release | Default: 1<br>
-ammo_grenade_limit_snowballs | sv, cl, rep, release | Default: 3<br>
 ammo_grenade_limit_total | sv, cl, rep, release | Default: 3<br>
-ammo_grenade_limit_tripwirefire | sv, cl, rep, release | Default: 1<br>
 ammo_item_limit_adrenaline | sv, cl, rep, release | Default: 5<br>
 ammo_item_limit_healthshot | sv, cl, rep, release | Default: 4<br>
 anim_damped_move_speed_timewindow | sv, cl, rep | Default: 0.2<br>
@@ -444,7 +440,7 @@ cl_clock_recvmargin_window |  | Default: 4<br>Clock sync will use past N seconds
 cl_clockdbg |  | Default: false<br>
 cl_clockdrift_max_ticks | cheat | Default: 3<br>Maximum number of ticks the clock is allowed to drift before the client snaps its clock to the server's.
 cl_clutch_mode | cl, release | Default: false<br>Silence voice and other distracting sounds until the end of round or next death.
-cl_color | cl, a, user | Default: 4<br>Preferred teammate color
+cl_color | cl, a, user | Default: 1<br>Preferred teammate color
 cl_commandtool_exec | cl | Runs a command from the command tool
 cl_connectionretrytime_p2p | release | Default: 20<br>Number of seconds over which to spread retry attempts for P2P.
 cl_cq_min_queue | user | Default: 0<br>Used by the client to inform the server of their desired queue length.  Derived from cl_tickpacket_recvmargin_desired and cl_tickpacket_desired_queuelength
@@ -1067,6 +1063,7 @@ cl_weapon_debug_print_accuracy | cl, rep | Default: false<br>
 cl_weapon_debug_show_accuracy | cl, cheat, release | Default: 0<br>Draws a circle representing the effective range with every shot.
 cl_weapon_debug_show_accuracy_duration | cl, cheat, release | Default: 10<br>
 cl_weapon_pickup_lerp | cl | Default: 2<br>
+cl_weapon_selection_rarity_color | cl, a, release | Default: false<br>
 cl_workshop_map_download_timeout | cl | Default: 120<br>
 cl_yawspeed | cl | Default: 210<br>
 clear | norecord, release | Clear console output.
@@ -1224,7 +1221,6 @@ csgo_mappreview_transparent_background_col_performance | cl | Default: 0.3<br>
 csgo_mappreview_transparent_background_col_quality | cl | Default: 0<br>
 csgo_nav_jump_link_detour_threshold | sv, rep | Default: 1500<br>don't traverse a jump link if there's a detour that costs less than this amount
 csgo_use_fullsort_for_opaque | cl, cheat | Default: true<br>fullsort the opaque pass when there wasn't a depth prepass
-csgo_vanity_defer_teleport | cl | Default: 3<br>
 csgo_watch_friend_session_exit_current | cl, clientcmd_can_execute | 
 csm_bias_override_0 | cheat | Default: 1<br>
 csm_bias_override_1 | cheat | Default: 1<br>
@@ -1395,6 +1391,7 @@ dump_localization_files |  | List all loaded localization files
 dump_panorama_css_properties | release | Prints out all valid panorama CSS properties and their documentation
 dump_panorama_events | release | print panorama event types and their documentation
 dump_panorama_render_command_stats |  | 
+dump_portrait_world_info_with_debug_name_containing | cl | 
 dump_response_symbols | sv | print all response symbols to the console
 dump_secondary_scene_worlds | cl | Lists secondary scene worlds and ref counts
 dumpparticlelist | cheat | Print out information on existing particle systems
@@ -2231,7 +2228,6 @@ mp_damage_scale_ct_head | sv, cl, rep, release | Default: 1<br>Scales the damage
 mp_damage_scale_t_body | sv, cl, rep, release | Default: 1<br>Scales the damage a T player takes by this much when they take damage in the body. (1 == 100%, 0.5 == 50%)
 mp_damage_scale_t_head | sv, cl, rep, release | Default: 1<br>Scales the damage a T player takes by this much when they take damage in the head (1 == 100%, 0.5 == 50%).	 REMEMBER! headshots do 4x the damage of the body before this scaler is applied.
 mp_damage_vampiric_amount | sv, rep, release | Default: 0<br>If Set to non-0, will determine the fraction of damage dealt that will be given to attacker.
-mp_death_drop_breachcharge | sv, cl, rep, release | Default: true<br>Drop breachcharge on player death
 mp_death_drop_c4 | sv, cl, rep, release | Default: true<br>Whether c4 is droppable
 mp_death_drop_defuser | sv, cl, rep, release | Default: true<br>Drop defuser on player death
 mp_death_drop_grenade | sv, cl, rep, release | Default: 2<br>Which grenade to drop on player death: 0=none, 1=best, 2=current or best, 3=all grenades
@@ -2275,7 +2271,6 @@ mp_endmatch_votenextmap_wargames_nummodes | sv, release | Default: 1<br>Maximum 
 mp_endwarmup_player_count | sv, cl, rep, release | Default: 0<br>Number of players required to be connected to end warmup early. 0 to require maximum players for mode.
 mp_equipment_reset_rounds | sv, cl, rep, release | Default: 0<br>Reset all player equipment every N rounds (0 for never)
 mp_fadetoblack | sv, cl, nf, rep | Default: false<br>fade a player's screen to black when he dies
-mp_fists_replace_melee | sv, release | Default: false<br>If enabled then when melee weapon is dropped player will have fists, when melee weapon is picked up then fists are unavailable
 mp_flinch_punch_scale | sv, cl, rep, cheat | Default: 3<br>Scalar for first person view punch when getting hit.
 mp_footsteps_serverside | sv, release | Default: true<br>Makes the server always play footstep sounds. Clients never calculate footstep sounds locally, instead relying on the server.
 mp_force_pick_time | sv, cl, rep, release | Default: 15<br>The amount of time a player has on the team screen to make a selection before being auto-teamed
@@ -2370,8 +2365,6 @@ mp_roundtime | sv, nf, rep, release | Default: 5<br>How many minutes each round 
 mp_roundtime_defuse | sv, nf, rep, release | Default: 0<br>How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead.
 mp_roundtime_hostage | sv, nf, rep, release | Default: 0<br>How many minutes each round of Hostage Rescue takes. If 0 then use mp_roundtime instead.
 mp_scrambleteams | sv, release | Scramble the teams and restart the game
-mp_shield_speed_deployed | sv, cl, rep, release | Default: 170<br>The max speed of a player when they have a shield deployed
-mp_shield_speed_holstered | sv, cl, rep, release | Default: 200<br>The max speed of a player when they have a shield holstered
 mp_shorthanded_cash_bonus_ignore_kicked | sv, cl, rep, release | Default: true<br>Determines whether kicked players are included in the assessment for short-handedness
 mp_shorthanded_cash_bonus_round_delay | sv, cl, rep, release | Default: 2<br>number of previous rounds that a team needs to have been shorthanded before they are eligible for the short-handed bonus
 mp_solid_teammates | sv, cl, rep, release | Default: 1<br>How solid are teammates: 0 = transparent; 1 = fully solid; 2 = can stand on top of heads
@@ -2843,28 +2836,7 @@ opus_unittest_test_signal |  | Default: false<br>
 p2p_listpeers |  | List currently known peers.
 p2p_ping | cl | Ping a peer.
 panorama_2d_translate_no_comp_layer |  | Default: true<br>
-panorama_3dpanel_anim_fadeinout_time_scale | cl | Default: 2<br>temp scale factor for animation fade in/out time
-panorama_3dpanel_anims_pivotlock | cl | Default: false<br>default true.
-panorama_3dpanel_camera_blend_mode | cl | Default: 0<br>
-panorama_3dpanel_camera_inout_scale | cl | Default: 0.1<br>
-panorama_3dpanel_camera_inout_scale_kb | cl | Default: 1<br>
-panorama_3dpanel_camera_lookat_scale | cl | Default: 0.1<br>
-panorama_3dpanel_camera_preset_blend_time | cl | Default: 1<br>time to blend between camera presets
-panorama_3dpanel_camera_rotate_altitude_scale | cl | Default: 0.004<br>
-panorama_3dpanel_camera_rotate_azimuth_scale | cl | Default: 0.004<br>
-panorama_3dpanel_debuginfo_anim | cl | Default: true<br>
-panorama_3dpanel_debuginfo_cam | cl | Default: true<br>
-panorama_3dpanel_debuginfo_item | cl | Default: true<br>
-panorama_3dpanel_debuginfo_manifest | cl | Default: true<br>
-panorama_3dpanel_debuginfo_paused | cl | Default: true<br>
-panorama_3dpanel_debuginfo_player | cl | Default: true<br>
-panorama_3dpanel_light_move_scale | cl | Default: 0.1<br>
-panorama_3dpanel_light_rotate_altitude_scale | cl | Default: 0.004<br>
-panorama_3dpanel_light_rotate_azimuth_scale | cl | Default: 0.004<br>
-panorama_3dpanel_loadout_rotate_drag | cl | Default: 0.19<br>
-panorama_3dpanel_loadout_rotate_frametime_multiplier | cl | Default: 4<br>
-panorama_3dpanel_loadout_rotate_grab_scale | cl | Default: 0.5<br>
-panorama_3dpanel_loadout_rotate_scale | cl | Default: 2<br>
+panorama_alignment_fixes |  | Default: true<br>Fix alignment issues
 panorama_allow_texture_composition_layer_fast_path |  | Default: true<br>
 panorama_allow_transitions |  | Default: true<br>
 panorama_assert_loading_panel_type |  | Default: false<br>Force style invalidation of the entire panel subtree when adding / removing classes.
@@ -2881,6 +2853,7 @@ panorama_console_max_autocomplete | cl | Default: 100<br>
 panorama_console_max_history | cl | Default: 100<br>
 panorama_console_max_lines | cl | Default: 2000<br>
 panorama_console_position_and_size | cl, a | Default: <br>
+panorama_content_size_fixes |  | Default: true<br>Fix content size issues
 panorama_daisy_wheel | cl | Default: ABXY<br>Daisy wheel input mode: RS \| ABXY
 panorama_dash_gap_ratio |  | Default: 0.5<br>
 panorama_dash_len |  | Default: 20<br>
@@ -2927,7 +2900,6 @@ panorama_joystick_enabled | a | Default: false<br>Enable panorama joystick input
 panorama_js_minidumps |  | Default: true<br>Enable sending minidumps on JS Exceptions.
 panorama_label_wrap_before_shrink | cl | Default: true<br>Should labels try to wrap text before using text-overflow: shrink
 panorama_large_dispatch_event_queue |  | Default: 0<br>
-panorama_light_inout_scale | cl | Default: 0.5<br>
 panorama_max_fps |  | Default: 120<br>
 panorama_max_oof_overlay_up_fps |  | Default: 4<br>
 panorama_max_overlay_fps |  | Default: 60<br>
@@ -3088,8 +3060,8 @@ playcast | release | Play a broadcast
 playdemo | release | Play a recorded demo file (.dem ).
 player0_using_joystick | a | Default: false<br>
 player_botdifflast_s | cl, a, release | Default: 2<br>
-player_competitive_maplist_2v2_10_0_CCC21262 | cl, a | Default: mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_palais,mg_de_whistle,mg_de_overpass<br>
-player_competitive_maplist_8_10_0_E5CC76A3 | cl, a | Default: mg_de_dust2,mg_de_train,mg_de_ancient,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_cs_italy,mg_de_edin,mg_de_anubis,mg_lobby_mapveto,mg_de_basalt,mg_de_overpass<br>
+player_competitive_maplist_2v2_10_0_E7739BAE | cl, a | Default: mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_brewery,mg_de_dogtown,mg_de_overpass<br>
+player_competitive_maplist_8_10_0_F1716344 | cl, a | Default: mg_de_grail,mg_de_dust2,mg_de_train,mg_de_ancient,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_cs_italy,mg_de_jura,mg_de_anubis,mg_lobby_mapveto,mg_cs_agency,mg_de_overpass<br>
 player_debug_off_nav | sv, cheat | Default: false<br>
 player_debug_print_damage | sv, cheat | Default: false<br>When true, print amount and type of all damage received by player to console.
 player_nevershow_communityservermessage | cl, a, per_user | Default: 0<br>
@@ -3181,6 +3153,7 @@ r_csgo_cmaa_enable | cl | Default: false<br>
 r_csgo_cmaa_extra_sharp | cl | Default: false<br>trade more sharpness for reduced antialiasing
 r_csgo_cmaa_quality | cl | Default: 3<br>0=low, 1=medium, 2=high, 3=ultra
 r_csgo_csm_pushback_distance | cl | Default: 7000<br>
+r_csgo_csm_pushback_distance_preview | cl | Default: 1500<br>
 r_csgo_cubemap_normalization | cl, cheat | Default: true<br>
 r_csgo_debug_reflection_rects | cl, cheat | Default: 0<br>
 r_csgo_decal_debug | cl, cheat | Default: false<br>
@@ -3232,8 +3205,6 @@ r_csgo_no_shader_resolve | cl, cheat | Default: false<br>
 r_csgo_outline_glow_scaledenom | cl, cheat | Default: 1<br>
 r_csgo_override_global_time | cl, cheat | Default: true<br>
 r_csgo_postprocess_enable | cl, cheat | Default: true<br>
-r_csgo_preview_csm_max_visible_distance | cl | Default: 2000<br>
-r_csgo_preview_csm_pushback_distance | cl | Default: 1500<br>
 r_csgo_prewarm_particles | cl | Default: false<br>
 r_csgo_r11g11b10_dither_mode | cl | Default: 2<br>0 - disabled, 1 - regular dither noise, 2 - blue noise dither
 r_csgo_readonly_depth_stencil_enable | cl, cheat | Default: true<br>
@@ -3281,7 +3252,6 @@ r_csgo_water_reflections | cl | Default: true<br>
 r_csgo_water_refraction | cl, cheat | Default: true<br>
 r_csgo_water_skybox_depth | cl | Default: true<br>
 r_cubemap_debug_colors | cheat | Default: 0<br>
-r_dac_disable_portrait_world_renderer | cl | Default: false<br>
 r_dashboard_render_quality | cl | Default: true<br>
 r_debug_draw_safe_area_insets |  | Default: false<br>Render safe area insets as wireframe.
 r_debug_particle_shadows | cl, cheat | Default: false<br>
@@ -3388,7 +3358,6 @@ r_icon_generate_runtime_mips | cl, cheat | Default: true<br>generate mips for ru
 r_icon_highcontrast_postprocessing_weight | cl, cheat | Default: 0.375<br>if using high contrast postprocessing, use this weight (weight = 1.0 for characters)
 r_icon_max_mip_width | cl, cheat | Default: 128<br>r_icon_max_mip_width
 r_icon_player_equip_gloves_from_loadout | cl, cheat | Default: false<br>equip gloves on player for icon rendering from loadout, or use default gloves
-r_icon_reload_map | cl, cheat | Default: false<br>force reload map on new request
 r_icon_rendering_height | cl, cheat | Default: 384<br>icon rendering height
 r_icon_rendering_msaa_mode_4xnice | cl, cheat | Default: 4<br>MSAA mode used for icon rendering 0-none, 1-2xMSAA, 2-4xMSAA, 3-6X, 4-8X, etc
 r_icon_rendering_width | cl, cheat | Default: 512<br>icon rendering width
@@ -3956,6 +3925,7 @@ snd_mainmenu_music_break_time_max | cl, cheat | Default: 0<br>Maximum amount of 
 snd_mainmenu_music_break_time_min | cl, cheat | Default: 0<br>Minimum amount of time to pause between playing main menu music
 snd_mapobjective_volume | cl, a, release | Default: 0.04<br>Volume of Map Objective Music
 snd_max_pitch_shift_inaccuracy | sv, cl, rep | Default: 0.08<br>
+snd_menumap_volume | cl, a, release | Default: 1<br>Volume of background sounds for maps
 snd_menumusic_volume | cl, a, release | Default: 0.04<br>Volume of Menu / Non-gameplay music
 snd_mergemethod |  | Default: 1<br>Sound merge method (0 == sum and clip, 1 == max, 2 == avg).
 snd_mix_async | cheat | Default: true<br>
@@ -4011,8 +3981,8 @@ snd_sequencer_show_bpm | cheat | Default: false<br>
 snd_sequencer_show_events | cheat | Default: false<br>
 snd_sequencer_show_quantize_queue | cheat | Default: false<br>
 snd_set_physics_surface_properties | cheat | Set physics surface properties for materials. Usage: &lt;heuristic #&gt; &lt;commit&gt;
-snd_setmixer | cheat | Set named Mixgroup of current mixer to mix vol, mute, solo.
-snd_setmixlayer | cheat | Set named Mixgroup of named mix layer to mix vol, mute, solo.
+snd_setmixer |  | Set named Mixgroup of current mixer to mix vol, mute, solo.
+snd_setmixlayer |  | Set named Mixgroup of named mix layer to mix vol, mute, solo.
 snd_showclassname | cheat | Default: 0<br>
 snd_showstart | cheat | Default: 0<br>
 snd_side_surround_speaker_position |  | Specifies the position (in degrees) of the virtual rear left/right speakers.
@@ -4104,8 +4074,8 @@ snd_soundmixer_flush |  | Reload soundmixers.txt file.
 snd_soundmixer_list_mix_groups |  | List all mix groups to dev console.
 snd_soundmixer_list_mix_layers |  | List all mix layers to dev console.
 snd_soundmixer_list_mixers |  | List all mixers to dev console.
-snd_soundmixer_set_trigger_factor | cheat | Set named mix layer / mix group, trigger amount.
-snd_soundmixer_setmixlayer_amount | cheat | Set named mix layer mix amount.
+snd_soundmixer_set_trigger_factor |  | Set named mix layer / mix group, trigger amount.
+snd_soundmixer_setmixlayer_amount |  | Set named mix layer mix amount.
 snd_soundmixer_update_maximum_frame_rate | cheat | Default: 10<br>
 snd_soundmixer_version |  | Default: 2<br>
 snd_spatialize_lerp | a, release | Default: 0<br>
@@ -4333,7 +4303,6 @@ sv_autobuyammo | sv, cl, nf, rep, release | Default: false<br>Enable automatic a
 sv_autoexec_mapname_cfg | sv, release | Default: false<br>Execute a mapname cfg file on the server automatically in custom game modes that require it.
 sv_autosave | sv, rep | Default: true<br>Set to 1 to autosave game on level transition. Does not affect autosave triggers.
 sv_backspeed | sv, cl, rep | Default: 0.6<br>How much to slow down backwards motion
-sv_banid_dev_enabled |  | Default: false<br>
 sv_banid_enabled | release | Default: true<br>Whether server supports banid command
 sv_bot_buy_decoy_weight | sv, release | Default: 1<br>Given a bot will buy a grenade, controls the odds of the grenade type. Proportional to all other sv_bot_buy_*_weight convars.
 sv_bot_buy_flash_weight | sv, release | Default: 1<br>Given a bot will buy a grenade, controls the odds of the grenade type. Proportional to all other sv_bot_buy_*_weight convars.
@@ -4430,11 +4399,6 @@ sv_falldamage_scale | sv, cl, rep, release | Default: 1<br>
 sv_falldamage_to_below_player_multiplier | sv, cl, rep, release | Default: 1<br>Scale damage when distributed across two players
 sv_falldamage_to_below_player_ratio | sv, cl, rep, release | Default: 0<br>Landing on a another player's head gives them this ratio of the damage.
 sv_filterban |  | Default: 1<br>Set packet filtering by IP mode
-sv_fistpunch_damage | sv, cl, rep | Default: 10<br>
-sv_fistpunch_damage_hard | sv, cl, rep | Default: 20<br>
-sv_fistpunch_damage_to_player_multiplier | sv, cl, rep | Default: 1.5<br>
-sv_fistpunch_impact_sounds | sv, cl, rep | Default: true<br>
-sv_fistpunch_viewmove | sv, cl, rep | Default: 40<br>
 sv_flashed_amount_for_blind_kill | sv, release | Default: 0.7<br>Minimum flashed alpha value for a player to be awarded a blind kill on the kill feed.
 sv_footsteps | sv, cl, nf, rep | Default: 1<br>Play footstep sound for players
 sv_force_team_intro_random | sv | Default: 0<br>
@@ -4628,14 +4592,6 @@ sv_server_graphic2 | sv, cl, rep, release | Default: <br>A 220x45 (&lt;16kb) ima
 sv_server_verify_blood_on_player | sv, cl, rep, cheat | Default: true<br>
 sv_setsteamaccount | release | token<br>Set game server account token to use for logging in to a persistent game server account
 sv_shared_team_pvs | sv | Default: false<br>PVS is shared between teams
-sv_shield_bash_damage_to_nonplayer | sv, cl, rep, release | Default: 30<br>
-sv_shield_bash_damage_to_players | sv, cl, rep, release | Default: 90<br>
-sv_shield_explosive_damage_cap | sv, cl, rep, release | Default: 99<br>
-sv_shield_explosive_damage_crouch_bonus | sv, cl, rep, release | Default: 10<br>
-sv_shield_explosive_damage_mindist | sv, cl, rep, release | Default: 30<br>
-sv_shield_explosive_damage_mult | sv, cl, rep, release | Default: 4<br>
-sv_shield_explosive_damage_scale | sv, cl, rep, release | Default: 0.5<br>
-sv_shield_hitpoints | sv, cl, rep, release | Default: 850<br>
 sv_show_bot_difficulty_in_name | sv, cl, rep | Default: false<br>0 = hide bot difficulty in bot name, 1 = show bot difficulty in bot name
 sv_show_move_collisions | sv, cl, rep, cheat | Default: false<br>Enable this to visualize collisions between player and geometry.
 sv_show_team_equipment_force_on | sv, cl, rep, release | Default: false<br>Force on if not prohibited
@@ -4940,8 +4896,8 @@ ui_playsettings_maps_listen_competitive | cl, a, release | Default: mg_de_dust2<
 ui_playsettings_maps_listen_deathmatch | cl, a, release | Default: mg_de_dust2<br>
 ui_playsettings_maps_listen_scrimcomp2v2 | cl, a, release | Default: mg_de_inferno<br>
 ui_playsettings_maps_listen_skirmish | cl, a, release | Default: mg_skirmish_armsrace<br>
-ui_playsettings_maps_official_casual | cl, a, release | Default: mg_dust247<br>
-ui_playsettings_maps_official_deathmatch | cl, a, release | Default: mg_dust247<br>
+ui_playsettings_maps_official_casual | cl, a, release | Default: mg_casualalpha<br>
+ui_playsettings_maps_official_deathmatch | cl, a, release | Default: mg_casualalpha<br>
 ui_playsettings_maps_official_gungameprogressive | cl, a, release | Default: mg_armsrace<br>
 ui_playsettings_maps_workshop | cl, a, release | Default: <br>
 ui_playsettings_mode_listen | cl, a, release | Default: deathmatch<br>
